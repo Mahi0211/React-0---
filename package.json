@@ -1,0 +1,33 @@
+{
+  "name": "react-0",
+  "version": "1.0.0",
+  "description": "This is React from scratch",
+  "main": "App.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mahi0211/React...0.git"
+  },
+  "keywords": [
+    "react",
+    "react-0",
+    "mahin0211"
+  ],
+  "author": "Mahin Pranave",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
