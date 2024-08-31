@@ -1,5 +1,6 @@
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 export const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
@@ -18,7 +19,15 @@ export const Body = () => {
     );
   };
 
-  return (
+  // Conditional Rendering
+  
+  // if (listOfRestaurant === 0) {
+  //   return <Shimmer />;
+  // }
+
+  return listOfRestaurant === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <h1>Top Restaurants</h1>
       <div className="button">
