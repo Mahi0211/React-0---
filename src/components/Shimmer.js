@@ -1,19 +1,16 @@
 const Shimmer = () => {
   return (
-    <div className="res-card" style={{ width: "273px", height: "283px" }}>
-      <div
-        style={{
-          width: "273px",
-          height: "170px",
-          objectFit: "cover",
-          borderRadius: "10px",
-          backgroundColor: "gray",
-        }}
-      ></div>
-      <h3 style={{ margin: "5px" }}></h3>
-      <h4 style={{ margin: "5px" }}></h4>
-      <h4 style={{ margin: "5px" }}></h4>
-      <h4 style={{ margin: "5px" }}></h4>
+    <div className="shimmer-container">
+      {Array.from({ length: 10 }).map((_, index) => (
+        <div key={index} className="shimmer-card">
+          <div className="shimmer-wrapper">
+            <div className="shimmer img-shimmer"></div>
+            <div className="shimmer h3-shimmer"></div>
+            <div className="shimmer p-shimmer"></div>
+            <div className="shimmer p-shimmer"></div>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

@@ -10,21 +10,12 @@ const RestaurantCard = (props) => {
   const { slaString } = resData?.info?.sla || {};
 
   return (
-    <div className="res-card" style={{ width: "273px", height: "283px" }}>
-      <img
-        style={{
-          width: "273px",
-          height: "170px",
-          objectFit: "cover",
-          borderRadius: "10px",
-        }}
-        src={CDN_URL + cloudinaryImageId}
-        alt="res-logo"
-      />
-      <h3 style={{ margin: "5px" }}>{name}</h3>
-      <h4 style={{ margin: "5px" }}>{`${avgRating} . ${slaString}`}</h4>
-      <h4 style={{ margin: "5px" }}>{cuisines?.join(", ")}</h4>
-      <h4 style={{ margin: "5px" }}>{areaName}</h4>
+    <div className="res-card">
+      <img src={CDN_URL + cloudinaryImageId} alt="res-logo" />
+      <h3>{name}</h3>
+      <h4>{`${avgRating} . ${slaString}`}</h4>
+      <h4>{cuisines?.join(", ")}</h4>
+      <h4>{areaName}</h4>
     </div>
   );
 };
