@@ -1,6 +1,7 @@
 import { LOGO_URL } from "../utils/constants";
 import logo from "../assets/logo.png";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
@@ -9,29 +10,29 @@ const Header = () => {
   return (
     <div className="header">
       <div className="logo-container">
-        <a href="">
+        <Link to="/">
           <img className="logo" src={logo} alt="QuickBite Logo" border="0" />
-        </a>
+        </Link>
       </div>
       <div className="location">
-        <a href="">Location</a>
+        <Link to="">Location</Link>
       </div>
       <div className="nav-items">
         <ul>
           <li>
-            <a href="">Search</a>
+            <Link to="/search">Search</Link>
           </li>
           <li>
-            <a href="">Home</a>
+            <Link to="">Home</Link>
           </li>
           <li>
-            <a href="">About Us</a>
+            <Link to="/about">About Us</Link>
           </li>
           <li>
-            <a href="">Contact Us</a>
+            <Link to="">Contact Us</Link>
           </li>
           <li>
-            <a href="">Cart</a>
+            <Link to="">Cart</Link>
           </li>
           <button
             className="login"
