@@ -5,8 +5,12 @@ const useRestaurantMenu = (resId) => {
   const [resInfo, setResInfo] = useState(null);
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    if (resId) {
+      fetchData();
+    } else {
+      console.error("resId is undefined");
+    }
+  }, [resId]);
 
   const fetchData = async () => {
     const res = await fetch(

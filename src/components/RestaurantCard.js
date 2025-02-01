@@ -1,9 +1,10 @@
 import { CDN_URL } from "../utils/constants";
-import { useDispatch } from "react-redux"
+import { useDispatch } from "react-redux";
 import { setSelectedRestaurant } from "../redux/restaurantSlice";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
+  console.log(resData);
 
   // Destructure only if resData and resData.info are defined
   const { name, cloudinaryImageId, cuisines, areaName, avgRating, sla } =
@@ -16,7 +17,11 @@ const RestaurantCard = (props) => {
   };
 
   return (
-    <div className="my-5 w-[273px] h-[283px] flex flex-col justify-between rounded-[10px] transform transition-transform duration-300 hover:scale-95 hover:shadow-lg" onClick={handleCardClick}>
+    <div
+      className="my-5 w-[273px] h-[283px] flex flex-col justify-between rounded-[10px] transform transition-transform duration-300 hover:scale-95 hover:shadow-lg"
+      daa-testid="resCard"
+      onClick={handleCardClick}
+    >
       <div className="relative w-[273px] h-[170px]">
         <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent rounded-[10px] h-[81px]"></div>
         <img

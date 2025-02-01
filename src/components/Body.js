@@ -1,15 +1,20 @@
 import RestaurantCard, { withDiscount } from "./RestaurantCard";
 import { useState, useEffect } from "react";
-import Shimmer from "./Shimmer";
+// import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useRestaurantList from "../utils/useRestaurantList";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
+console.log("body component is loaded");
+
 export const Body = () => {
-  const listOfRestaurant = useRestaurantList();
+  const listOfRestaurant = useRestaurantList() || [];
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
-  // console.log(listOfRestaurant);
+  console.log(listOfRestaurant);
+
+  console.log("Body component is rendering");
+  console.log("Filtered Restaurants:", filteredRestaurant);
 
   const DisplayDiscount = withDiscount(RestaurantCard);
 
@@ -25,13 +30,15 @@ export const Body = () => {
   }
 
   // conditional rendering
-  return listOfRestaurant.length === 0 ? (
-    <Shimmer />
-  ) : (
+  // return listOfRestaurant.length === 0 ? (
+  //   <Shimmer />
+  // ) :
+  return (
     <div className="body">
       <div className="flex items-center gap-4 px-[150px] my-12 rounded-lg">
         <input
           type="text"
+          data-testid="searchInput"
           className="flex-grow px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
           placeholder="Search for restaurants and food"
           value={searchText}
@@ -47,7 +54,7 @@ export const Body = () => {
               res.info.name.toLowerCase().includes(searchText.toLowerCase())
             );
             setFilteredRestaurant(filteredRes);
-            console.log(filteredRestaurant);
+            // console.log(filteredRestaurant);
           }}
         >
           search

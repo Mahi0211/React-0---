@@ -1,19 +1,28 @@
 import { addItem } from "../redux/cartSlice";
 import { CDN_URL } from "../utils/constants";
 import { useDispatch } from "react-redux";
-import AlertComponent from "./AlertComponent";
-import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ItemList = ({ data, isLast }) => {
-
-  const [showAlert, setShowAlert] = useState(false);
-
   const dispatch = useDispatch();
+
+  const notify = (data) => {
+    toast(`${data.name} Added to your cart`, {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  };
 
   const handleCartItems = (data) => {
     dispatch(addItem(data));
-    setShowAlert(true);
-    setTimeout(() => setShowAlert(false), 2000);
+    notify(data);
   };
 
   const {
@@ -30,8 +39,9 @@ const ItemList = ({ data, isLast }) => {
 
   return (
     <div
-      className={`flex justify-between mx-4 py-[45px] ${!isLast ? "border-b-2" : "border-b-0"
-        }`}
+      className={`flex justify-between mx-4 py-[45px] ${
+        !isLast ? "border-b-2" : "border-b-0"
+      }`}
     >
       <div className="w-[800px] flex flex-col gap-3">
         <div className="flex flex-col gap-1">
@@ -89,9 +99,7 @@ const ItemList = ({ data, isLast }) => {
           >
             ADD
           </button>
-          {showAlert && (
-            <AlertComponent />
-          )}
+          <ToastContainer />
           {variantsV2 && Object.keys(variantsV2).length > 0 ? (
             <p className="mt-[3px] text-[13px] leading-4 text-[#02060c] text-opacity-[45%]">
               Customisable

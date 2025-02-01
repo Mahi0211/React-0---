@@ -4,6 +4,8 @@ import { SWIGGY_API } from "../utils/constants";
 const useRestaurantList = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
 
+  console.log("useRestaurantList hook is running");
+
   useEffect(() => {
     fetchData();
   }, []);
