@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Mahi0211/React...0.git"
+    "url": "git+https://github.com/Mahi0211/React...0.git"
   },
   "keywords": [
     "react",
@@ -37,6 +37,8 @@
     "@reduxjs/toolkit": "^2.5.0",
     "@swc/helpers": "^0.5.15",
     "@tailwindcss/line-clamp": "^0.4.4",
+    "axios": "^1.7.9",
+    "cors": "^2.8.5",
     "express": "^4.21.2",
     "node-fetch": "^3.3.2",
     "punycode": "^2.3.1",
@@ -49,5 +51,11 @@
   },
   "browserslist": [
     "last 2 versions"
-  ]
+  ],
+  "main": "babel.config.js",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Mahi0211/React...0/issues"
+  },
+  "homepage": "https://github.com/Mahi0211/React...0#readme"
 }

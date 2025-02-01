@@ -1,20 +1,19 @@
-const express = require("express");
-const fetch = require("node-fetch");
+import express from "express";
+import cors from "cors";
+import restaurants from "./routes/restaurants.js";
+
+const PORT = 8000;
+
 const app = express();
-const PORT = 5000;
 
-app.get("/api/restaurants", async (req, res) => {
-  try {
-    const response = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9610983&lng=80.137236&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
-    const data = await response.json();
-    res.json(data);
-  } catch (error) {
-    res.status(500).send("Error fetching data");
-  }
-});
+// Middleware
+app.use(express.json()); // Parse JSON request bodies
+app.use(cors()); // Enable CORS
 
+// Routes
+app.use("/api/restaurants", restaurants);
+
+// Start the server
 app.listen(PORT, () => {
-  console.log(`Proxy server running on http://localhost:${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
