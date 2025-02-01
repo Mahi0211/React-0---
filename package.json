@@ -52,7 +52,6 @@
   "browserslist": [
     "last 2 versions"
   ],
-  "main": "babel.config.js",
   "type": "module",
   "bugs": {
     "url": "https://github.com/Mahi0211/React...0/issues"
