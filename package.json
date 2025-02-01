@@ -2,7 +2,6 @@
   "name": "react-0",
   "version": "1.0.0",
   "description": "This is React from scratch",
-  "main": "App.js",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
