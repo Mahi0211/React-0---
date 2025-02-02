@@ -11,10 +11,10 @@ export const Body = () => {
   const listOfRestaurant = useRestaurantList() || [];
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
-  console.log(listOfRestaurant);
+  // console.log(listOfRestaurant);
 
-  console.log("Body component is rendering");
-  console.log("Filtered Restaurants:", filteredRestaurant);
+  // console.log("Body component is rendering");
+  // console.log("Filtered Restaurants:", filteredRestaurant);
 
   const DisplayDiscount = withDiscount(RestaurantCard);
 

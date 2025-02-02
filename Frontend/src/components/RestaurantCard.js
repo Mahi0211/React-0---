@@ -4,7 +4,7 @@ import { setSelectedRestaurant } from "../redux/restaurantSlice";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
-  console.log(resData);
+  // console.log(resData);
 
   // Destructure only if resData and resData.info are defined
   const { name, cloudinaryImageId, cuisines, areaName, avgRating, sla } =
