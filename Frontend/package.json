@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Frontend for React from scratch",
   "scripts": {
-    "start": "parcel index.html --cache-dir .cache",
-    "build": "parcel build index.html --cache-dir .cache",
+    "start": "parcel index.html --no-cache",
+    "build": "parcel build index.html --no-cache",
     "clean": "parcel clean",
     "test": "jest"
   },
