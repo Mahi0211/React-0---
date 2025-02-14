@@ -10,7 +10,6 @@ const RestaurantMenu = () => {
 
   // Custom Hook...
   const resInfo = useRestaurantMenu(resId);
-  // console.log(resInfo);
 
   const {
     name,
@@ -32,8 +31,6 @@ const RestaurantMenu = () => {
         );
       }
     );
-
-  // console.log(categories);
 
   return resInfo === null ? (
     <Shimmer />

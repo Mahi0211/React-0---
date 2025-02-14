@@ -7,9 +7,6 @@ import { Link } from "react-router-dom";
 const Checkout = (props) => {
   const { cartItems, resBasicData } = props;
 
-  console.log("cartItems:", cartItems); // Debug cartItems
-  console.log("resBasicData:", resBasicData); // Debug resBasicData
-
   if (!cartItems || cartItems.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center h-full">

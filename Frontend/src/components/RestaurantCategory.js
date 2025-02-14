@@ -1,15 +1,11 @@
 import ItemList from "./ItemList";
-// import { useState } from "react";
 
 const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
   const { title, itemCards } = data;
-  // const [showItems, setShowItems] = useState();
-  // console.log(title, itemCards);
 
   const handleClick = () => {
     // setShowItems(!showItems);
     setShowIndex();
-    console.log("Button clicked");
   };
 
   return (

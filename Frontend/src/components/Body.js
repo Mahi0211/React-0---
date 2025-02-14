@@ -5,16 +5,10 @@ import { Link } from "react-router-dom";
 import useRestaurantList from "../utils/useRestaurantList";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
-console.log("body component is loaded");
-
 export const Body = () => {
   const listOfRestaurant = useRestaurantList() || [];
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
-  // console.log(listOfRestaurant);
-
-  // console.log("Body component is rendering");
-  // console.log("Filtered Restaurants:", filteredRestaurant);
 
   const DisplayDiscount = withDiscount(RestaurantCard);
 
@@ -49,12 +43,10 @@ export const Body = () => {
         <button
           className="flex items-center justify-center p-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
           onClick={() => {
-            console.log(searchText);
             const filteredRes = listOfRestaurant.filter((res) =>
               res.info.name.toLowerCase().includes(searchText.toLowerCase())
             );
             setFilteredRestaurant(filteredRes);
-            // console.log(filteredRestaurant);
           }}
         >
           search

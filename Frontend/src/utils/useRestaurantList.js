@@ -4,8 +4,6 @@ import { SWIGGY_API } from "../utils/constants";
 const useRestaurantList = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
 
-  console.log("useRestaurantList hook is running");
-
   useEffect(() => {
     fetchData();
   }, []);
@@ -19,7 +17,6 @@ const useRestaurantList = () => {
       }
 
       const data = await res.json();
-      console.log("Received data:", data);
 
       setListOfRestaurant(
         data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
